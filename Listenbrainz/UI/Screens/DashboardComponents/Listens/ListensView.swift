@@ -67,7 +67,9 @@ struct ListensView: View {
                     }
                   }else if selectedTab == 1 {
                     StatisticsView(viewModel: dashboardViewModel)
-                    }
+                  }else{
+                    TasteView(viewModel: dashboardViewModel)
+                  }
                     Spacer()
                 }
             }

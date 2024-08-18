@@ -20,8 +20,10 @@ class DashboardViewModel: ObservableObject {
     @Published var topAlbums: [Release] = []
     @Published var topTracks: [Recording] = []
     @Published var dailyActivities: [String: [Day]] = [:]
-     @Published var hours: [Int] = []
-     @Published var counts: [Int] = []
+    @Published var hours: [Int] = []
+    @Published var counts: [Int] = []
+    @Published var lovedSongs: [Feedback] = []
+    @Published var hatedSongs: [Feedback] = []
 
     private var subscriptions: Set<AnyCancellable> = []
     private var repository: DashboardRepository
@@ -251,6 +253,38 @@ class DashboardViewModel: ObservableObject {
          self.hours = allHours
          self.counts = allCounts
      }
+  
+  func getLovedAndHatedSongs(username: String) {
+      print("Fetching loved and hated songs for username: \(username)")
+
+      guard !username.isEmpty else {
+          print("Error: Username is empty")
+          self.lovedSongs = []
+          self.hatedSongs = []
+          return
+      }
+
+      repository.getLovedAndHatedSongs(userName: username)
+          .receive(on: DispatchQueue.main)
+          .sink(receiveCompletion: { [weak self] completion in
+              switch completion {
+              case .finished:
+                  print("Finished fetching songs")
+                  self?.error = nil
+              case .failure(let error):
+                  print("Error in sink: \(error.localizedDescription)")
+                  self?.error = error.localizedDescription
+              }
+          }, receiveValue: { [weak self] feedbacks in
+              print("Received Feedbacks: \(feedbacks)")
+              self?.lovedSongs = feedbacks.filter { $0.score == 1 }
+              self?.hatedSongs = feedbacks.filter { $0.score == -1 }
+              print("Loved Songs: \(String(describing: self?.lovedSongs))")
+              print("Hated Songs: \(String(describing: self?.hatedSongs))")
+          })
+          .store(in: &subscriptions)
+  }
+
 }
 
 

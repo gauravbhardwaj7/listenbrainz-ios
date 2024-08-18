@@ -66,6 +66,7 @@
 		BB6FF5812B52D3B40057F8C1 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FF5802B52D3B40057F8C1 /* ExploreView.swift */; };
 		BB7833642B3F2DB3005D7266 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7833632B3F2DB3005D7266 /* ImageLoader.swift */; };
 		BBB115792B57A879004E157E /* TopMissedRecordingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB115782B57A879004E157E /* TopMissedRecordingsView.swift */; };
+		BBC20CC92C7204F200B71743 /* Taste.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC20CC82C7204F200B71743 /* Taste.swift */; };
 		BBC334512C46EF3300A72E07 /* DashboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC334502C46EF3300A72E07 /* DashboardRepository.swift */; };
 		BBC334532C46EF3F00A72E07 /* DashboardRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC334522C46EF3F00A72E07 /* DashboardRepositoryImpl.swift */; };
 		BBC334562C46EF6200A72E07 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC334552C46EF6200A72E07 /* DashboardViewModel.swift */; };
@@ -202,6 +203,7 @@
 		BB6FF5802B52D3B40057F8C1 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		BB7833632B3F2DB3005D7266 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BBB115782B57A879004E157E /* TopMissedRecordingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMissedRecordingsView.swift; sourceTree = "<group>"; };
+		BBC20CC82C7204F200B71743 /* Taste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taste.swift; sourceTree = "<group>"; };
 		BBC334502C46EF3300A72E07 /* DashboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRepository.swift; sourceTree = "<group>"; };
 		BBC334522C46EF3F00A72E07 /* DashboardRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRepositoryImpl.swift; sourceTree = "<group>"; };
 		BBC334552C46EF6200A72E07 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -468,17 +470,9 @@
 		BB13BD9F2C6A42CE00807896 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				BB13BDC22C6A710A00807896 /* TopAlbumsSection */,
 				BB46AC752C6A2E24003BE1FC /* StatisticsView.swift */,
 			);
 			path = Statistics;
-			sourceTree = "<group>";
-		};
-		BB13BDC22C6A710A00807896 /* TopAlbumsSection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TopAlbumsSection;
 			sourceTree = "<group>";
 		};
 		BB46AC742C6A2DF5003BE1FC /* DashboardComponents */ = {
@@ -590,6 +584,7 @@
 				BB13BD9C2C6A35FF00807896 /* Statistics */,
 				BBC7CA652C60E29D00470944 /* Followers.swift */,
 				BBC7CA672C60E2DA00470944 /* Following.swift */,
+				BBC20CC82C7204F200B71743 /* Taste.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -879,6 +874,7 @@
 				BB66C2012A9F3F0900BB4CBA /* FeedRepositoryImpl.swift in Sources */,
 				BBC5C7BD2B4FE8C0000A5EB1 /* TopRecording.swift in Sources */,
 				6F842DCD29C64E3E00DBBC7B /* ListensView.swift in Sources */,
+				BBC20CC92C7204F200B71743 /* Taste.swift in Sources */,
 				BBC5C7CD2B4FEEC7000A5EB1 /* TopAlbumsGridView.swift in Sources */,
 				BB66C2112AA0F6C500BB4CBA /* ListensArtist.swift in Sources */,
 				BB31ADBF2C6A05E100D25CCA /* ListensStatsView.swift in Sources */,

@@ -133,6 +133,23 @@ class DashboardRepositoryImpl: DashboardRepository {
         .eraseToAnyPublisher()
   }
 
+  func getLovedAndHatedSongs(userName: String) -> AnyPublisher<[Feedback], AFError> {
+          let urlString = "\(BuildConfiguration.shared.API_LISTENBRAINZ_BASE_URL)/feedback/user/\(userName)/get-feedback?metadata=true"
+    print(urlString)
+          guard let url = URL(string: urlString) else {
+              return Fail(error: AFError.invalidURL(url: urlString)).eraseToAnyPublisher()
+          }
+
+          return AF.request(url, method: .get)
+              .validate()
+              .publishDecodable(type: Taste.self)
+              .value()
+              .map { taste in
+                print("Decoded Taste Object: \(taste)")
+                return taste.feedback?.filter { $0.score == 1 || $0.score == -1 } ?? []
+              }
+              .eraseToAnyPublisher()
+      }
 
  }
 

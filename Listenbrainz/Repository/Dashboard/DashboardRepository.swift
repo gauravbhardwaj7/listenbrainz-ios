@@ -20,4 +20,7 @@ protocol DashboardRepository{
   func getTopAlbums(userName:String) -> AnyPublisher<AlbumsPayload, AFError>
   func getTopTracks(userName:String) -> AnyPublisher<TracksPayload, AFError>
   func getDailyActivity(userName:String) -> AnyPublisher<DailyActivityPayload, AFError>
+
+  //MARK: - Taste
+  func getLovedAndHatedSongs(userName: String) -> AnyPublisher<[Feedback], AFError>
 }
