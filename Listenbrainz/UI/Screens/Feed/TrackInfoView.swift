@@ -17,7 +17,7 @@ struct TrackInfoView<T: TrackMetadataProvider>: View {
     @AppStorage(Strings.AppStorageKeys.userToken) private var userToken: String = ""
     @AppStorage(Strings.AppStorageKeys.userName) private var userName: String = ""
     @EnvironmentObject var feedViewModel: FeedViewModel
-  @EnvironmentObject var dashboardViewModel: DashboardViewModel
+    @EnvironmentObject var dashboardViewModel: DashboardViewModel
 
 
 
@@ -122,6 +122,11 @@ struct TrackInfoView<T: TrackMetadataProvider>: View {
                 Image(systemName: "ellipsis")
                     .padding(.horizontal, 10)
                     .rotationEffect(.degrees(90))
+                    .overlay(
+                                Rectangle()
+                                    .fill(Color.clear)
+                                    .contentShape(Rectangle())
+                                    .frame(width: 60, height: 60)                             )
             }
         }
     }
